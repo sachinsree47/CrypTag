@@ -1,21 +1,134 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>CrypTag - QR Encryption</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CrypTag</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Outfit', sans-serif;
+    }
+
+    body {
+      background: #1a0826;
+      color: #fff;
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    .logo {
+      width: 80px;
+      margin: 0 auto 20px;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0px); }
+    }
+
+    h1 {
+      font-size: 3rem;
+      color: #00f2ff;
+      text-shadow: 0 0 10px #00f2ff, 0 0 20px #00f2ff;
+      margin-bottom: 15px;
+    }
+
+    p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin: 0 auto 40px;
+      line-height: 1.6;
+      color: #e0e0e0;
+    }
+
+    p strong {
+      color: #ffffff;
+      font-weight: 700;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 20px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      background: linear-gradient(135deg, #00e6ff, #e100ff);
+      color: white;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 30px;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 0 20px #e100ff50;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none; /* removes underline */
+    }
+
+    .btn:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 25px #e100ff, 0 0 25px #00e6ff;
+    }
+
+    footer {
+      position: fixed;
+      bottom: 20px;
+      width: 100%;
+      text-align: center;
+      font-size: 1rem;
+      color: #ff9ee0;
+    }
+
+    footer span {
+      color: #ff4f93;
+      font-weight: bold;
+    }
+
+    @media screen and (max-width: 600px) {
+      h1 {
+        font-size: 2.2rem;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+
+      .btn {
+        font-size: 0.9rem;
+        padding: 12px 24px;
+      }
+    }
+  </style>
 </head>
 <body>
-    <h2>Encrypt & Generate QR</h2>
-    <form action="/generate" method="POST">
-        <input type="text" name="message" placeholder="Enter message" required><br>
-        <input type="password" name="password" placeholder="Password" required><br>
-        <button type="submit">Generate QR</button>
-    </form>
 
-    <h2>Decrypt from QR</h2>
-    <form action="/decode" method="POST" enctype="multipart/form-data">
-        <input type="file" name="qrfile" accept="image/*" required><br>
-        <input type="password" name="password" placeholder="Password" required><br>
-        <button type="submit">Decode QR</button>
-    </form>
+  <img src="static/cryptag.png" alt="CrypTag Logo" class="logo">
+  <h1>CrypTag</h1>
+  <p>
+    CrypTag lets you <strong>encrypt secret messages</strong> with a password and turn them into secure QR codes. 🔐<br>
+    Share them safely. Later, <strong>decrypt</strong> using the same password. <br>Your secrets, sealed in style. ✨
+  </p>
+
+  <div class="buttons">
+    <a href="/encrypt" class="btn">🔒 Encrypt Message</a>
+    <a href="/decrypt" class="btn">🔓 Decrypt QR</a>
+  </div>
+
+  <footer>
+    Made with ❤️ by <span>Sachin Sree</span>
+  </footer>
+
 </body>
 </html>

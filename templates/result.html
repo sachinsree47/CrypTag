@@ -1,16 +1,86 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>CrypTag Result</title>
+  <meta charset="UTF-8">
+  <title>CrypTag - Result</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(135deg, #1a0826, #2c1040);
+      color: #ffffff;
+      font-family: 'Outfit', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 60px 20px;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      color: #00f2ff;
+      text-shadow: 0 0 12px #00f2ff;
+      margin-bottom: 30px;
+    }
+
+    .output-box {
+      background: #220433;
+      border-radius: 20px;
+      box-shadow: 0 0 15px #e100ff66;
+      padding: 30px;
+      max-width: 600px;
+      width: 90%;
+      text-align: center;
+      word-wrap: break-word;
+      white-space: pre-wrap;
+    }
+
+    .output-box img {
+      max-width: 100%;
+      border-radius: 12px;
+      margin-bottom: 20px;
+    }
+
+    .decrypted-text {
+      font-size: 1.2rem;
+      color: #ffb4fa;
+      margin-top: 10px;
+    }
+
+    a {
+      margin-top: 30px;
+      color: #00f2ff;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.1rem;
+      transition: 0.3s ease;
+    }
+
+    a:hover {
+      color: #e100ff;
+      text-shadow: 0 0 8px #e100ff;
+    }
+
+    footer {
+      margin-top: 60px;
+      color: #ff9ee0;
+      font-size: 0.9rem;
+    }
+  </style>
 </head>
 <body>
+  <h1>🔍 Result</h1>
+
+  <div class="output-box">
     {% if qr_path %}
-        <h2>Encrypted QR Code</h2>
-        <img src="{{ qr_path }}" alt="QR Code">
-    {% elif decrypted %}
-        <h2>Decrypted Message</h2>
-        <p>{{ decrypted }}</p>
+      <img src="{{ qr_path }}" alt="Generated QR Code">
     {% endif %}
-    <a href="/">Back</a>
+
+    {% if decrypted %}
+      <div class="decrypted-text"> {{ decrypted }}</div>
+    {% endif %}
+  </div>
+
+  <a href="/">← Back to Home</a>
+  <footer>Made with ❤️ by Sachin Sree</footer>
 </body>
 </html>

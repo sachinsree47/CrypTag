@@ -1,0 +1,6 @@
+Flask
+qrcode
+pycryptodome
+pyzbar
+opencv-python
+pillow

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CrypTag - Encrypt</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(135deg, #1a0826, #2c1040);
+      color: #fff;
+      font-family: 'Outfit', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 60px 20px;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      color: #00f2ff;
+      text-shadow: 0 0 12px #00f2ff;
+      margin-bottom: 30px;
+    }
+
+    form {
+      background: #220433;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(255, 0, 255, 0.2);
+      width: 100%;
+      max-width: 500px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    label {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+    }
+
+    textarea,
+    input[type="password"] {
+      padding: 12px;
+      font-size: 1rem;
+      border-radius: 8px;
+      border: none;
+      margin-bottom: 20px;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    button {
+      padding: 12px;
+      background: linear-gradient(to right, #00f2ff, #e100ff);
+      color: white;
+      font-size: 1.1rem;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    button:hover {
+      box-shadow: 0 0 12px #e100ff80;
+    }
+
+    a {
+      margin-top: 20px;
+      color: #ffb4fa;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    footer {
+      margin-top: 60px;
+      color: #ff9ee0;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <h1>🔐 Encrypt a Message</h1>
+  <form action="/generate" method="POST">
+    <label for="message">Enter Your Message:</label>
+    <textarea id="message" name="message" required></textarea>
+
+    <label for="password">Set a Password:</label>
+    <input type="password" id="password" name="password" required>
+
+    <button type="submit">Generate QR Code</button>
+  </form>
+  <a href="/">← Back to Home</a>
+  <footer>Made with ❤️ by Sachin Sree</footer>
+</body>
+</html>
