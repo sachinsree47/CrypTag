@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CrypTag Result</title>
+</head>
+<body>
+    {% if qr_path %}
+        <h2>Encrypted QR Code</h2>
+        <img src="{{ qr_path }}" alt="QR Code">
+    {% elif decrypted %}
+        <h2>Decrypted Message</h2>
+        <p>{{ decrypted }}</p>
+    {% endif %}
+    <a href="/">Back</a>
+</body>
+</html>
